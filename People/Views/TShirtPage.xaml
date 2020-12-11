@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Views.TShirtPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Purple"  CornerRadius="0">
+                <Label Text="T-Shirt Ordering App" HorizontalTextAlignment="Center" FontFamily="Bold" TextColor="Black" FontSize="30"/>
+            </Frame>
+
+            <Entry x:Name="newNames"
+           Placeholder="Enter Names" />
+            
+            <Entry x:Name="newGenders"
+           Placeholder="Enter Genders" />
+
+            <Entry x:Name="newTShirtSizes"
+           Placeholder="Enter T-Shirt Sizes" />
+
+            <Entry x:Name="newDateOfOrders"  
+           Placeholder="Enter Date of Orders" />
+
+            <Entry x:Name="newTShirtColors"
+           Placeholder="Enter T-Shirt Colors" />
+
+            <Entry x:Name="newShipping_Addresses"
+           Placeholder="Enter Shipping Addresses" />
+
+            <Button Text="Add T-Shirt Orders"
+           Clicked="ButtonClicked" />
+
+            <Button Text="Get Product Information"
+           Clicked="GetButtonClicked" />
+
+            <ListView x:Name="tshirtList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Names}" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding Genders}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding TShirtSizes}" Grid.Row="0" Grid.Column="2"/>
+                                    <Label Text="{Binding DateOfOrders}" Grid.Row="0" Grid.Column="3"/>
+                                    <Label Text="{Binding TShirtColors}" Grid.Row="0" Grid.Column="4"/>
+                                    <Label Text="{Binding Shipping_Addresses}" Grid.Row="0" Grid.Column="5"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="statusMessage"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

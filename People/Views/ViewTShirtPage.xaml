@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Views.ViewTShirtPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="tshirtList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Names}" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding Genders}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding TShirtSizes}" Grid.Row="0" Grid.Column="2"/>
+                                    <Label Text="{Binding DateOfOrders}" Grid.Row="0" Grid.Column="3"/>
+                                    <Label Text="{Binding TShirtColors}" Grid.Row="0" Grid.Column="4"/>
+                                    <Label Text="{Binding ShippingAddresses}" Grid.Row="0" Grid.Column="5"/>
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
